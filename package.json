@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "express": "^5.1.0",
+    "morgan": "^1.10.1",
+    "winston": "^3.18.3"
+  },
+  "name": "13-handledning-repetition-middleware",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ha-fed24-fuls/13-handledning-repetition-middleware.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/ha-fed24-fuls/13-handledning-repetition-middleware/issues"
+  },
+  "homepage": "https://github.com/ha-fed24-fuls/13-handledning-repetition-middleware#readme"
+}
