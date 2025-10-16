@@ -25,15 +25,18 @@ app.use(logRequest);
 // Visa att den här middlewaren körs varje gång
 app.use(requestCounter);
 
-// Routes för test för att kolla att server körs och är ok
-app.get("/hej", (req, res) => {
+app.get("/hej", (req, res, next) => {
+  const somethingWrong = true;
+  if (somethingWrong) {
+    res.status(404);
+    return next(new Error("Hittades inte"));
+  }
   res.send("HEJ");
 });
-
-// Denna route medvetet kastar ett fel, för att visa vår errrorHnadler och logning av felet
 app.get("/error", (req, res) => {
   throw new Error("Simulerat serverfel....");
 });
+
 app.use(errorHandler);
 
 app.listen(PORT, () => {

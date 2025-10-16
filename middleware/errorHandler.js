@@ -7,8 +7,11 @@ import { logger } from "./logger.js";
 function errorHandler(err, req, res, next) {
   logger.error(`Fel!: ${err.message}`);
 
-  res.status(500).json({
-    error: "Serverfel",
+  const status = res.statusCode >= 400 ? res.statusCode : 500;
+
+  res.status(status).json({
+    error: status >= 500 ? "Serverfel" : "Fel",
+    status,
     message: err.message,
   });
 }
